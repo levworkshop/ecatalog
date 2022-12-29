@@ -14,6 +14,5 @@ include_once "./inc/navbar.php";
     <h5>Our Special Offers</h5>
 </main>
 
-
 <?php
 include_once "./inc/footer.php";
