@@ -5,70 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/catalog.css">
+    <title>The Catalog</title>
 </head>
 
-<body>
+<body class="bg-dark text-white">
     <?php
-    /*
-    variables:
-    - store name
-    - last update
-    - product name
-    - product price
-    */
-
-    $first_num = 17;
-    $second_num = 5;
-    $first_name = 'aaa';
-    $lastName = "bbb";
-    $bool1 = true;
-    $empty1 = null;
-    $arr1 = [1, 2, 3];
-
-    define('CONSTANT1', 'aaaa');
-    echo CONSTANT1;
-
-    echo $first_num + $second_num;
-    echo "<p>Hello, $first_name</p>";
-
-    echo $first_name . $lastName;
-    echo "$first_name $lastName";
-
-    var_dump($arr1);
-    echo "<br>";
-    print_r($arr1);
-
-    1 + 2;
-    1 * 2;
-    1 / 2;
-    1 - 2;
-    12 % 10;
-
-    $first_num || $second_num;
-    $bool1 === true;
 
     ?>
 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">The Catalog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="text-center">
+            <h2>Sport Superstar</h2>
+            <h5>Everything that you need to stay active</h5>
+        </div>
+
+        <h5>Trending Products</h5>
+
+        <h5>Our Special Offers</h5>
+    </main>
 
 
-    <!-- Hello, your number is -->
-
-    <div>
-        <?php
-        echo 2 + 5;
-        echo " hello again";
-        echo "<br>";
-        echo "goodbye";
-        echo "<br>";
-        echo "Hello", ' World', 45, 6.3;
-        echo "<p>Yo there</p>";
-        ?>
-        <br>
-    </div>
-
-    <?= 2 + 5; ?>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
 </html>
