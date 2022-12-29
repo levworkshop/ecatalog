@@ -44,7 +44,7 @@ include_once "./inc/navbar.php";
         // for ($i = 0; $i < $len; $i++) {
 
         foreach ($products as $item) {
-            echo "<div class=\"col\">";
+            echo "<div class=\"col-sm-12 col-md-4 mb-3\">";
             echo "<div class=\"card\">";
             echo
             "<img src=\"{$item['image']}\" class=\"card-img-top\" alt=\"{$item['name']}\">";
