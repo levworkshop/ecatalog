@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -10,4 +10,5 @@
     <title>The Catalog</title>
 </head>
 
-<body class="bg-dark text-white">
+<body class="h-100 bg-dark">
+    <div class="d-flex h-100 flex-column">
