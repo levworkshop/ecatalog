@@ -75,7 +75,11 @@ include_once "./inc/navbar.php";
         ?>
     </div>
 
-    <h5>Our Special Offers</h5>
+    <?php $time = time(); ?>
+
+    <h5>
+        Our Special Offers for <?= date('d/m/Y', $time) ?>
+    </h5>
 </main>
 
 <?php
