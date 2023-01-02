@@ -50,7 +50,7 @@ include_once "./inc/navbar.php";
             return in_array($name, $recommended) ? "bi-star-fill" : "bi-star";
         };
 
-        $len = count($products);
+        // $len = count($products);
         foreach ($products as $item) {
             $col = <<<COL
                 <div class="col-sm-12 col-md-4 mb-3">
@@ -78,6 +78,40 @@ include_once "./inc/navbar.php";
     <h5>
         Our Special Offers for <?= date('d/m/Y', $time) ?>
     </h5>
+
+    <?php
+    $offers = [
+        [
+            'title' => 'Black Friday Sale',
+            'description' => 'buy now before the offer expires'
+        ],
+        [
+            'title' => '2 in the price of 1',
+            'description' => 'for club members only!'
+        ]
+    ];
+    ?>
+
+    <div class="row mb-5 pb-3">
+        <?php
+        foreach ($offers as $offer) {
+            $card = <<<CARD
+                <div class="col-sm-12 col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">{$offer['title']}</h5>
+                            <p class="card-text">{$offer['description']}</p>
+                            <a href="#" class="btn btn-primary">Get It</a>
+                        </div>
+                    </div>
+                </div>
+            CARD;
+
+            echo $card;
+        }
+        ?>
+    </div>
+
 </main>
 
 <?php
