@@ -62,7 +62,7 @@ include_once "./inc/navbar.php";
                             <p class="card-text">{$item['description']}</p>
                             <p class="card-text">rating: {$item['rating']}</p>
                             <p class="card-text"><i class="{$fn_icon($item['name'])}"></i></p>
-                            <a href="#" class="btn btn-primary">View Product</a>
+                            <a href="product.php?prod={$item['name']}" class="btn btn-primary">View Product</a>
                         </div>
                     </div>
                 </div>
