@@ -41,36 +41,34 @@ include_once "./inc/navbar.php";
 
         $recommended = ['Tennis Edge', 'Weight It'];
 
-        function price_format($price)
-        {
+        $fn_price = function ($price) {
             return "$$price";
-        }
+        };
 
-        function recommended_icon($name)
-        {
+        $fn_icon = function ($name) {
             global $recommended;
             return in_array($name, $recommended) ? "bi-star-fill" : "bi-star";
-        }
+        };
 
         $len = count($products);
         foreach ($products as $item) {
-            echo "<div class=\"col-sm-12 col-md-4 mb-3\">";
-            echo "<div class=\"card\">";
-            echo
-            "<img src=\"{$item['image']}\" class=\"card-img-top\" alt=\"{$item['name']}\">";
-            echo "<div class=\"card-body text-dark
-        \">";
-            echo "<h5 class=\"card-title\">{$item['name']}</h5>";
-            echo "<p class=\"card-text \">";
-            echo price_format($item['price']);
-            echo "</p> ";
-            echo "<p class=\"card-text\">{$item['description']}</p>";
-            echo "<p class=\"card-text \">rating: {$item['rating']}</p>";
-            echo "<p class=\"card-text \"><i class=\"" . recommended_icon($item['name']) . "\"></i></p>";
-            echo "<a href=\"#\" class=\"btn btn-primary\">View Product</a>";
-            echo "</div>";
-            echo "</div>";
-            echo "</div>";
+            $col = <<<COL
+                <div class="col-sm-12 col-md-4 mb-3">
+                    <div class="card">
+                        <img src="{$item['image']}" class="card-img-top" alt="{$item['name']}">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">{$item['name']}</h5>
+                            <p class="card-text">{$fn_price($item['price'])}</p> 
+                            <p class="card-text">{$item['description']}</p>
+                            <p class="card-text">rating: {$item['rating']}</p>
+                            <p class="card-text"><i class="{$fn_icon($item['name'])}"></i></p>
+                            <a href="#" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            COL;
+
+            echo $col;
         }
         ?>
     </div>
