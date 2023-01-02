@@ -39,9 +39,17 @@ include_once "./inc/navbar.php";
             ],
         ];
 
+        $recommended = ['Tennis Edge', 'Weight It'];
+
         function price_format($price)
         {
             return "$$price";
+        }
+
+        function recommended_icon($name)
+        {
+            global $recommended;
+            return in_array($name, $recommended) ? "bi-star-fill" : "bi-star";
         }
 
         $len = count($products);
@@ -58,6 +66,7 @@ include_once "./inc/navbar.php";
             echo "</p> ";
             echo "<p class=\"card-text\">{$item['description']}</p>";
             echo "<p class=\"card-text \">rating: {$item['rating']}</p>";
+            echo "<p class=\"card-text \"><i class=\"" . recommended_icon($item['name']) . "\"></i></p>";
             echo "<a href=\"#\" class=\"btn btn-primary\">View Product</a>";
             echo "</div>";
             echo "</div>";
