@@ -83,11 +83,13 @@ include_once "./inc/navbar.php";
     $offers = [
         [
             'title' => 'Black Friday Sale',
-            'description' => 'buy now before the offer expires'
+            'description' => 'buy now before the offer expires',
+            'code' => 'BF015'
         ],
         [
             'title' => '2 in the price of 1',
-            'description' => 'for club members only!'
+            'description' => 'for club members only!',
+            'code' => 'TO211'
         ]
     ];
     ?>
@@ -101,7 +103,7 @@ include_once "./inc/navbar.php";
                         <div class="card-body text-dark">
                             <h5 class="card-title">{$offer['title']}</h5>
                             <p class="card-text">{$offer['description']}</p>
-                            <a href="#" class="btn btn-primary">Get It</a>
+                            <a href="offer.php?code={$offer['code']}&title={$offer['title']}" class="btn btn-primary">Get It</a>
                         </div>
                     </div>
                 </div>
