@@ -1,4 +1,5 @@
 <?php
+require_once "./inc/utils.php";
 include_once "./inc/header.php";
 include_once "./inc/navbar.php";
 ?>
@@ -40,10 +41,6 @@ include_once "./inc/navbar.php";
         ];
 
         $recommended = ['Tennis Edge', 'Weight It'];
-
-        $fn_price = function ($price) {
-            return "$$price";
-        };
 
         $fn_icon = function ($name) {
             global $recommended;
