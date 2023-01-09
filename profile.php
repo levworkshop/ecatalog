@@ -1,7 +1,6 @@
 <?php
 require_once "./inc/config.php";
 
-$error = true;
 $message = '';
 
 if (isset($_POST['submit'])) {
@@ -23,7 +22,6 @@ if (isset($_POST['submit'])) {
         $file_ex = strtolower($file_info['extension']);
 
         if (in_array($file_ex, FILE_EXT)) {
-            $error = false;
             $file_name = UPLOAD_DIR . date('Y.m.d.H.i.s') . '-' . $_FILES['image']['name'];
             move_uploaded_file($_FILES['image']['tmp_name'], $file_name);
             $message = 'File was uploaded successfully';
