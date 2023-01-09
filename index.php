@@ -38,11 +38,7 @@ include_once "./inc/navbar.php";
         //         'image' => 'https://cdn.pixabay.com/photo/2016/08/31/22/20/weights-1634747__340.jpg',
         //         'rating' => 5,
         //     ],
-        // ];
-        
-        $db_conn = mysqli_connect('localhost', 'root', 'password', 'catalog');
-        $sql = "SELECT * FROM products";
-        $result = mysqli_query($db_conn, $sql);
+        // ];     
 
         $recommended = ['Tennis Edge', 'Weight It'];
 
@@ -50,6 +46,10 @@ include_once "./inc/navbar.php";
             global $recommended;
             return in_array($name, $recommended) ? "bi-star-fill" : "bi-star";
         };
+
+        $db_conn = mysqli_connect('localhost', 'root', 'password', 'catalog');
+        $sql = "SELECT * FROM products";
+        $result = mysqli_query($db_conn, $sql);
 
         if ($result && mysqli_num_rows($result) > 0) {
             while ($item = mysqli_fetch_assoc($result)) {
