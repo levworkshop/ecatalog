@@ -1,4 +1,5 @@
 <?php
+require_once "./inc/config.php";
 require_once "./inc/utils.php";
 include_once "./inc/header.php";
 include_once "./inc/navbar.php";
@@ -47,7 +48,7 @@ include_once "./inc/navbar.php";
             return in_array($name, $recommended) ? "bi-star-fill" : "bi-star";
         };
 
-        $db_conn = mysqli_connect('localhost', 'root', 'password', 'catalog');
+        $db_conn = mysqli_connect(DB_URL, DB_USER, DB_PWD, DB_NAME);
         $sql = "SELECT * FROM products";
         $result = mysqli_query($db_conn, $sql);
 
