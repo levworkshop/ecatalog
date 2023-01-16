@@ -2,8 +2,18 @@
 require_once "./inc/config.php";
 require_once "./inc/utils.php";
 require_once "./inc/database.php";
+require_once "./classes/products.php";
 include_once "./inc/header.php";
 include_once "./inc/navbar.php";
+
+$shirtProduct = new Product();
+$shirtProduct->name = 'Special Tshirt';
+$shirtProduct->price = 15;
+$shirtProduct->size = 'L';
+
+$weightProduct = new Product();
+$weightProduct->name = '15kilo';
+$weightProduct->price = 22;
 ?>
 
 <main class="p-4 bg-dark text-white shadow">
@@ -48,6 +58,26 @@ include_once "./inc/navbar.php";
             echo $col;
         }
         ?>
+    </div>
+    <div class="row mb-5 pb-3">
+        <div class="col-sm-12 col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-dark">
+                    <p class="card-text"><?= $shirtProduct->name; ?></p>
+                    <p class="card-text">price: <?= $shirtProduct->price; ?></p>
+                    <p class="card-text">tax: 17%</p>
+                    <p class="card-text">total: <?= $shirtProduct->totalPrice(); ?></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-dark">
+                    <p class="card-text"><?= $weightProduct->name; ?></p>
+                    <p class="card-text"><?= $weightProduct->price; ?></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <?php $time = time(); ?>
